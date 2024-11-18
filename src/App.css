@@ -1,0 +1,102 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.app-content {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* src/styles/global.css */
+
+/* Tổng quan container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* Giao diện bảng */
+.table-container {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.table-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+/* Bảng */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.custom-table th,
+.custom-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.custom-table th {
+  background-color: #f9f9f9;
+  font-weight: bold;
+}
+
+.text-blue {
+  color: #007bff;
+  text-decoration: none;
+}
+
+/* Responsive layout */
+@media screen and (min-width: 768px) {
+  .table-container {
+    width: 32%;
+    float: left;
+    padding: 8px;
+  }
+}
+
