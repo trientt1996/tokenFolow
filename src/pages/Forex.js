@@ -81,7 +81,11 @@ function Forex() {
         setSpotData(spotData);
       } catch (error) {}
     };
-    handleGetToken();
+    const interval = setInterval(() => {
+      handleGetToken();
+    }, 300000);
+
+    return () => clearInterval(interval);
   }, []);
   return (
     <div className="container">
