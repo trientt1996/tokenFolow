@@ -99,4 +99,10 @@
     padding: 8px;
   }
 }
+.buy {
+  color: blue;
+}
+.sell {
+  color: red;
+}
 
