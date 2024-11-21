@@ -26,36 +26,48 @@ function Crypto() {
             percentChange: token?.['5m'],
             macd5m: token?.macd5m,
             macdOld5m: token?.macdOld5m,
+            trend5m: token?.trend5m,
+            nextTime5m: token?.nextTime5m,
           });
           data15m.push({
             name: token?.token,
             percentChange: token?.['15m'],
             macd15m: token?.macd15m,
             macdOld15m: token?.macdOld15m,
+            trend15m: token?.trend15m,
+            nextTime15m: token?.nextTime15m,
           });
           data1h.push({
             name: token?.token,
             percentChange: token?.['1h'],
             macd1h: token?.macd1h,
             macdOld1h: token?.macdOld1h,
+            trend1h: token?.trend1h,
+            nextTime1h: token?.nextTime1h,
           });
           data4h.push({
             name: token?.token,
             percentChange: token?.['4h'],
             macd4h: token?.macd4h,
             macdOld4h: token?.macdOld4h,
+            trend4h: token?.trend4h,
+            nextTime4h: token?.nextTime4h,
           });
           data1d.push({
             name: token?.token,
             percentChange: token?.['1d'],
             macd1d: token?.macd1d,
             macdOld1d: token?.macdOld1d,
+            trend1d: token?.trend1d,
+            nextTime1d: token?.nextTime1d,
           });
           data1w.push({
             name: token?.token,
             percentChange: token?.['1w'],
             macd1w: token?.macd1w,
             macdOld1w: token?.macdOld1w,
+            trend1w: token?.trend1w,
+            nextTime1w: token?.nextTime1w,
           });
         }
         const spotData = [

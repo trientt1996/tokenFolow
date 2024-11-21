@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 
 function SpotTable({ title, data, time }) {
-  console.log('dsadasd', Date.now());
   return (
     <div className="table-container">
       <h3 className="table-title">{title}</h3>
@@ -18,16 +17,16 @@ function SpotTable({ title, data, time }) {
           {data?.map((item, index) => {
             let textAction = 'Đứng ngoài';
             if (
-              item?.[`macdOld${time}`] < 0 &&
-              item?.[`macd${time}`] > 0 &&
+              Number(item?.[`macdOld${time}`]) <= 0 &&
+              Number(item?.[`macd${time}`]) >= 0 &&
               item?.[`trend${time}`] == 'down' &&
               item?.[`nextTime${time}`] < Date.now()
             ) {
               textAction = 'Buy';
             }
             if (
-              item?.[`macdOld${time}`] > 0 &&
-              item?.[`macd${time}`] < 0 &&
+              Number(item?.[`macdOld${time}`]) >= 0 &&
+              Number(item?.[`macd${time}`]) <= 0 &&
               item?.[`trend${time}`] == 'up' &&
               item?.[`nextTime${time}`] < Date.now()
             ) {
@@ -37,7 +36,7 @@ function SpotTable({ title, data, time }) {
               <tr key={index}>
                 <td className="text-blue">{item?.name}</td>
                 <td>{item?.percentChange} %</td>
-                <td>{textAction}</td>
+                <td className={textAction}>{textAction}</td>
               </tr>
             );
           })}
