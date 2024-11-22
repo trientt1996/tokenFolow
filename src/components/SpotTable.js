@@ -22,10 +22,6 @@ function SpotTable({ title, data, time }) {
               item?.[`trend${time}`] == 'down' &&
               item?.[`nextTime${time}`] < Date.now()
             ) {
-              console.log('n111', new BigNumber(item?.[`macdOld${time}`]).lte(0));
-              console.log('n111', item?.[`macdOld${time}`]);
-              console.log('xxxx', item?.[`macd${time}`]);
-              console.log('xxxx', new BigNumber(item?.[`macd${time}`]).gte(0));
               textAction = 'Buy';
             }
             if (
