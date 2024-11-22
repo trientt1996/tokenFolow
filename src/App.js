@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Crypto />} />
+        <Route path="/crypto" element={<Crypto />} />
         <Route path="/forex" element={<Forex />} />
       </Routes>
     </Router>

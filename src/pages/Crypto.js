@@ -1,16 +1,21 @@
 // src/pages/Home.js
 import React, { useEffect, useState } from 'react';
 import SpotTable from '../components/SpotTable';
-import { axiosInstance, TOKEN_CRYPTO } from '../commons/constant';
-
+import { axiosInstance, TOKEN_CRYPTO, TOKEN_CRYPTO_ALL } from '../commons/constant';
+import { useSearchParams } from 'react-router-dom';
 function Crypto() {
   const [spotData, setSpotData] = useState();
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get('query');
   useEffect(() => {
     const handleGetToken = async () => {
       try {
         const data = await axiosInstance.get('getToken');
         const tokens = data?.data?.filter((val) => {
-          if (TOKEN_CRYPTO?.includes(val?.token)) {
+          if (TOKEN_CRYPTO?.includes(val?.token) && !query) {
+            return val;
+          }
+          if (TOKEN_CRYPTO_ALL?.includes(val?.token) && query == 'all') {
             return val;
           }
         });
