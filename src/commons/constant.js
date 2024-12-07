@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const endpointApi = 'http://18.142.178.3:3001';
+export const endpointApi = 'http://13.229.251.30:3001';
 // export const endpointApi = 'http://localhost:3001';
 export const axiosInstance = axios.create({
   baseURL: endpointApi, // Đặt URL cơ sở cho các yêu cầu

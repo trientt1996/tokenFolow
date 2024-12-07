@@ -16,6 +16,7 @@ function SpotTable({ title, data, time }) {
         <tbody>
           {data?.map((item, index) => {
             let textAction = 'Đứng ngoài';
+            let textPercent = '';
             if (
               new BigNumber(item?.[`macdOld${time}`]).lte(0) &&
               new BigNumber(item?.[`macd${time}`]).gte(0) &&
@@ -32,10 +33,17 @@ function SpotTable({ title, data, time }) {
             ) {
               textAction = 'Sell';
             }
+
+            if (new BigNumber(item?.percentChange).gte(0)) {
+              textPercent = 'Buy';
+            }
+            if (new BigNumber(item?.percentChange).lt(0)) {
+              textPercent = 'Sell';
+            }
             return (
               <tr key={index}>
                 <td className="text-blue">{item?.name}</td>
-                <td>{item?.percentChange} %</td>
+                <td className={textPercent}>{item?.percentChange} %</td>
                 <td className={textAction}>{textAction}</td>
               </tr>
             );
